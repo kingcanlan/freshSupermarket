@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/freshsupermarket?characterEncoding=utf8&serverTimezone=Asia/Shanghai
+      username: root
+      password: mysql
+      max-active: 20    #最大连接数
+      max-wait: 6000    #最大等待时间
+      min-idle: 1       #最小空前数
+      test-on-borrow: true    #检测链接是否是有效连接
+      test-on-return: true    #将连接放回连接池做检测
+
+mybatis:
+  mapper-locations: classpath*:com/syhg/mapper/*Mapper.xml     #加载所有以Mapper.xml结尾文件
+  config-location: classpath:mybatis-config.xml
